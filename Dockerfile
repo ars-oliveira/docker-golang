@@ -4,7 +4,7 @@ WORKDIR /go/src/app
 
 COPY . .
 
-RUN CGO_ENABLED=0 go build -o /app main.go
+RUN CGO_ENABLED=0 go build -ldflags "-w -s" -o /app main.go
 
 FROM scratch
 
